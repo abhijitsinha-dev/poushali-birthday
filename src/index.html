@@ -1,0 +1,138 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character encoding and viewport -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title and SEO meta tags -->
+    <title>Happy Birthday Poushali Chakraborty | A Special Tribute</title>
+    <meta
+      name="description"
+      content="Celebrating Poushali Chakraborty's birthday with a journey through the years. Explore a special memory lane and live timer of her wonderful journey."
+    />
+    <meta
+      name="keywords"
+      content="Poushali Chakraborty, Birthday, Memories, Celebration"
+    />
+    <meta name="author" content="Poushali Chakraborty" />
+
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://poushali-birthday.abhijitsinha.workers.dev/"
+    />
+    <meta
+      property="og:title"
+      content="Happy Birthday Poushali Chakraborty! ✨"
+    />
+    <meta
+      property="og:description"
+      content="A special birthday tribute featuring a memory gallery and life timer. Explore the journey of Poushali Chakraborty."
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta
+      property="og:image"
+      content="https://poushali-birthday.abhijitsinha.workers.dev/og-image.webp"
+    />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://poushali-birthday.abhijitsinha.workers.dev/"
+    />
+    <meta
+      name="twitter:title"
+      content="Happy Birthday Poushali Chakraborty! ✨"
+    />
+    <meta
+      name="twitter:description"
+      content="A special birthday tribute featuring a memory gallery and life timer. Explore the journey of Poushali Chakraborty."
+    />
+    <meta
+      name="twitter:image"
+      content="https://poushali-birthday.abhijitsinha.workers.dev/og-image.webp"
+    />
+    <meta name="twitter:image:alt" content="Portrait of Poushali Chakraborty" />
+
+    <!-- Google Fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Normalize.css for cross-browser consistency -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- Favicon links for various devices -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <!-- Main content container -->
+    <main class="container">
+      <!-- Hero section with birthday message, photo, and timer -->
+      <section id="hero-section" class="hero">
+        <h1 id="birthday-msg">Loading...</h1>
+
+        <!-- Container for the main profile image -->
+        <div class="main-image-container">
+          <img id="main-photo" src="" alt="Birthday Girl" loading="lazy" />
+        </div>
+
+        <!-- Timer section showing time since birth -->
+        <div class="timer-container">
+          <h2>Time since you arrived ✨</h2>
+          <div class="timer-grid" id="timer"></div>
+        </div>
+      </section>
+
+      <!-- Gallery section for displaying memories -->
+      <section id="gallery-section" class="memories">
+        <h2>Memories Lane</h2>
+        <div class="gallery-grid" id="gallery"></div>
+      </section>
+    </main>
+
+    <!-- Modal/lightbox for viewing gallery images in larger size -->
+    <div id="image-modal" class="modal">
+      <span class="close-btn">&times;</span>
+      <div class="modal-content-wrapper">
+        <img class="modal-content" id="modal-img" loading="lazy" />
+        <div id="caption"></div>
+      </div>
+    </div>
+
+    <!-- Main JavaScript file -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

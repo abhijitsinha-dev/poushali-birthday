@@ -1,0 +1,251 @@
+/* style.css */
+
+/* CSS Custom Properties (Variables) for consistent theming */
+:root {
+  --bg-color: #fff9fa; /* Very light pink background */
+  --text-color: #4a4a4a;
+  --accent-color: #ff8fa3; /* Soft pink */
+  --highlight-color: #ff4d6d; /* Darker pink */
+  --card-bg: #ffffff;
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  /* Fluid font size base using clamp() for responsive typography */
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.6;
+}
+
+/* Main container for centering content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* --- Section 1: Hero --- */
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Main birthday message heading */
+h1 {
+  font-family: var(--font-heading);
+  /* Responsive font size using clamp() */
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--highlight-color);
+  text-shadow: 2px 2px 0px #ffd1dc;
+}
+
+/* Circular container for main profile image */
+.main-image-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 10px 20px rgba(255, 143, 163, 0.3);
+}
+
+/* Main profile image styling */
+#main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Timer section heading */
+.timer-container h2 {
+  font-family: var(--font-heading);
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+/* Grid layout for timer display */
+.timer-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: var(--font-heading);
+  color: var(--text-color);
+}
+
+/* Individual time unit box (years, months, etc.) */
+.time-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  min-width: 80px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Numeric value in timer */
+.time-val {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--highlight-color);
+}
+
+/* Label text in timer */
+.time-label {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Mobile Responsiveness for Timer */
+@media (max-width: 768px) {
+  .timer-grid {
+    /* Switch to grid layout on mobile for better spacing */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 10px;
+  }
+}
+
+/* --- Section 2: Gallery --- */
+.memories h2 {
+  text-align: center;
+  font-family: var(--font-heading);
+  color: var(--highlight-color);
+  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Grid layout for gallery items */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Columns Desktop */
+  gap: 15px;
+}
+
+/* Individual gallery item container */
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Gallery image styling */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hover Effect: Year overlay that appears on hover */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 143, 163, 0.6); /* Pinkish overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay when gallery item is hovered */
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Year text styling inside overlay */
+.year-text {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness for Gallery */
+@media (max-width: 768px) {
+  .gallery-grid {
+    /* Reduce to 2 columns on mobile devices */
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns Mobile */
+  }
+}
+
+/* --- Modal / Lightbox --- */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95); /* Light theme modal */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Container for modal content */
+.modal-content-wrapper {
+  position: relative;
+  max-width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Modal image styling */
+.modal-content {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Caption text below modal image */
+#caption {
+  margin-top: 15px;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--highlight-color);
+}
+
+/* Close button in modal */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: var(--highlight-color);
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
